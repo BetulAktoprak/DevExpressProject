@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DevExpressProject.Context;
+using DevExpressProject.Entities;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpressProject.Context;
-using DevExpressProject.Entities;
 
 namespace DevExpressProject.FormCustomer
 {
@@ -16,6 +16,9 @@ namespace DevExpressProject.FormCustomer
 
         private void CustomerList_Load(object sender, EventArgs e)
         {
+            gridView1.OptionsBehavior.Editable = false;
+            gridView1.OptionsView.ShowAutoFilterRow = true;
+            gridView1.OptionsView.ShowGroupPanel = false;
             LoadCustomer();
         }
         private void LoadCustomer()
@@ -40,12 +43,12 @@ namespace DevExpressProject.FormCustomer
 
                 var newCustomer = new Customer
                 {
-                    FullName = txtFullName.Text,
-                    TCNo = txtTc.Text,
-                    Phone = txtPhone.Text,
-                    Email = txtEmail.Text,
-                    VergiNo = txtVergiNo.Text,
-                    VergiDairesi = txtVergiDairesi.Text
+                    //FullName = txtFullName.Text,
+                    //TCNo = txtTc.Text,
+                    //Phone = txtPhone.Text,
+                    //Email = txtEmail.Text,
+                    //VergiNo = txtVergiNo.Text,
+                    //VergiDairesi = txtVergiDairesi.Text
                 };
 
                 //var validator = new CustomerValidator();
@@ -63,33 +66,33 @@ namespace DevExpressProject.FormCustomer
 
                 MessageBox.Show("Kullanıcı başarıyla kaydedildi!");
                 //CustomerAdded?.Invoke(this, EventArgs.Empty);
-                CustomerClear();
+                //CustomerClear();
                 LoadCustomer();
             }
         }
 
         private void CustomerClear()
         {
-            txtFullName.Clear();
-            txtPhone.Clear();
-            txtEmail.Clear();
-            txtTc.Clear();
-            txtVergiNo.Clear();
-            txtVergiDairesi.Clear();
+            //txtFullName.Clear();
+            //txtPhone.Clear();
+            //txtEmail.Clear();
+            //txtTc.Clear();
+            //txtVergiNo.Clear();
+            //txtVergiDairesi.Clear();
         }
-        
+
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue("Id") != null)
             {
                 _customerId = (int)gridView1.GetFocusedRowCellValue("Id");
-                txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
-                txtTc.Text = gridView1.GetFocusedRowCellValue("TCNo").ToString();
-                txtFullName.Text = gridView1.GetFocusedRowCellValue("FullName").ToString();
-                txtEmail.Text = gridView1.GetFocusedRowCellValue("Email").ToString();
-                txtPhone.Text = gridView1.GetFocusedRowCellValue("Phone").ToString();
-                txtVergiNo.Text = gridView1.GetFocusedRowCellValue("VergiNo").ToString();
-                txtVergiDairesi.Text = gridView1.GetFocusedRowCellValue("VergiDairesi").ToString();
+                //txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
+                //txtTc.Text = gridView1.GetFocusedRowCellValue("TCNo").ToString();
+                //txtFullName.Text = gridView1.GetFocusedRowCellValue("FullName").ToString();
+                //txtEmail.Text = gridView1.GetFocusedRowCellValue("Email").ToString();
+                //txtPhone.Text = gridView1.GetFocusedRowCellValue("Phone").ToString();
+                //txtVergiNo.Text = gridView1.GetFocusedRowCellValue("VergiNo").ToString();
+                //txtVergiDairesi.Text = gridView1.GetFocusedRowCellValue("VergiDairesi").ToString();
             }
         }
 
@@ -100,14 +103,14 @@ namespace DevExpressProject.FormCustomer
                 var customer = context.Customers.FirstOrDefault(c => c.Id == _customerId);
                 if (customer != null)
                 {
-                    customer.FullName = txtFullName.Text;
-                    customer.Email = txtEmail.Text;
-                    customer.Phone = txtPhone.Text;
-                    customer.TCNo = txtTc.Text;
-                    customer.VergiDairesi = txtVergiDairesi.Text;
-                    customer.VergiNo = txtVergiNo.Text;
+                    //customer.FullName = txtFullName.Text;
+                    //customer.Email = txtEmail.Text;
+                    //customer.Phone = txtPhone.Text;
+                    //customer.TCNo = txtTc.Text;
+                    //customer.VergiDairesi = txtVergiDairesi.Text;
+                    //customer.VergiNo = txtVergiNo.Text;
 
-                    customer.UpdatedDate = DateTime.UtcNow;
+                    //customer.UpdatedDate = DateTime.UtcNow;
 
                     //var validator = new CustomerValidator();
                     //var result = validator.Validate(customer);
@@ -158,6 +161,18 @@ namespace DevExpressProject.FormCustomer
                     }
                 }
             }
+        }
+
+        private void txtSearch_EditValueChanged(object sender, EventArgs e)
+        {
+            gridView1.FindFilterText = txtSearch.Text;
+        }
+
+        private void btnCariEkle_Click(object sender, EventArgs e)
+        {
+            AddCutomerForm addCutomerForm = new AddCutomerForm();
+            addCutomerForm.ShowDialog();
+            LoadCustomer();
         }
     }
 }
