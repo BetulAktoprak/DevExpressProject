@@ -1,6 +1,6 @@
-﻿namespace DevExpressProject.FormCustomer
+﻿namespace DevExpressProject.FormProduct
 {
-    partial class CustomerList
+    partial class ProductList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCariList = new DevExpress.XtraGrid.GridControl();
+            this.dgvProductList = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
@@ -48,7 +47,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTc = new DevExpress.XtraEditors.TextEdit();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCariList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -61,17 +60,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvCariList
+            // dgvProductList
             // 
-            this.dgvCariList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvCariList.Location = new System.Drawing.Point(0, 0);
-            this.dgvCariList.MainView = this.gridView1;
-            this.dgvCariList.Name = "dgvCariList";
-            this.dgvCariList.Size = new System.Drawing.Size(1540, 561);
-            this.dgvCariList.TabIndex = 0;
-            this.dgvCariList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvProductList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvProductList.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductList.MainView = this.gridView1;
+            this.dgvProductList.Name = "dgvProductList";
+            this.dgvProductList.Size = new System.Drawing.Size(1522, 646);
+            this.dgvProductList.TabIndex = 1;
+            this.dgvProductList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.dgvCariList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCariList_KeyDown);
             // 
             // gridView1
             // 
@@ -83,18 +81,10 @@
             this.gridView1.Appearance.Row.Options.UseBorderColor = true;
             this.gridView1.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.gridView1.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView1.GridControl = this.dgvCariList;
+            this.gridView1.GridControl = this.dgvProductList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(1440, 92);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(0, 13);
-            this.labelControl1.TabIndex = 2;
             // 
             // groupControl1
             // 
@@ -115,10 +105,10 @@
             this.groupControl1.Controls.Add(this.txtTc);
             this.groupControl1.Controls.Add(this.txtId);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(1540, 0);
+            this.groupControl1.Location = new System.Drawing.Point(1522, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(391, 561);
-            this.groupControl1.TabIndex = 5;
+            this.groupControl1.Size = new System.Drawing.Size(695, 646);
+            this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Cari Ekle";
             // 
             // btnDelete
@@ -130,7 +120,6 @@
             this.btnDelete.Size = new System.Drawing.Size(188, 32);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Sil";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -141,7 +130,6 @@
             this.btnUpdate.Size = new System.Drawing.Size(188, 32);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Güncelle";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -154,7 +142,6 @@
             this.btnSave.Size = new System.Drawing.Size(188, 33);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Kaydet";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl7
             // 
@@ -254,20 +241,17 @@
             this.txtId.Size = new System.Drawing.Size(52, 20);
             this.txtId.TabIndex = 1;
             // 
-            // CustomerList
+            // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(1931, 561);
+            this.ClientSize = new System.Drawing.Size(2217, 646);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.dgvCariList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "CustomerList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.CustomerList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCariList)).EndInit();
+            this.Controls.Add(this.dgvProductList);
+            this.Name = "ProductList";
+            this.Text = "ProductList";
+            this.Load += new System.EventHandler(this.ProductList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -280,15 +264,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl dgvCariList;
+        private DevExpress.XtraGrid.GridControl dgvProductList;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;

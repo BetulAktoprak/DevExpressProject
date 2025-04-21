@@ -1,6 +1,6 @@
 ﻿namespace DevExpressProject.FormCustomer
 {
-    partial class CustomerList
+    partial class AddCutomerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCariList = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtVergiDairesi = new DevExpress.XtraEditors.TextEdit();
@@ -47,9 +42,6 @@
             this.txtFullName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTc = new DevExpress.XtraEditors.TextEdit();
-            this.txtId = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCariList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).BeginInit();
@@ -58,48 +50,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvCariList
-            // 
-            this.dgvCariList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvCariList.Location = new System.Drawing.Point(0, 0);
-            this.dgvCariList.MainView = this.gridView1;
-            this.dgvCariList.Name = "dgvCariList";
-            this.dgvCariList.Size = new System.Drawing.Size(1540, 561);
-            this.dgvCariList.TabIndex = 0;
-            this.dgvCariList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.dgvCariList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCariList_KeyDown);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.Preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.gridView1.Appearance.Preview.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.Silver;
-            this.gridView1.Appearance.Row.BorderColor = System.Drawing.Color.DarkOrange;
-            this.gridView1.Appearance.Row.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.Options.UseBorderColor = true;
-            this.gridView1.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.gridView1.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView1.GridControl = this.dgvCariList;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(1440, 92);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(0, 13);
-            this.labelControl1.TabIndex = 2;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.btnDelete);
-            this.groupControl1.Controls.Add(this.btnUpdate);
             this.groupControl1.Controls.Add(this.btnSave);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.txtVergiDairesi);
@@ -113,35 +67,11 @@
             this.groupControl1.Controls.Add(this.txtFullName);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtTc);
-            this.groupControl1.Controls.Add(this.txtId);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(1540, 0);
+            this.groupControl1.Location = new System.Drawing.Point(40, 29);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(391, 561);
-            this.groupControl1.TabIndex = 5;
+            this.groupControl1.Size = new System.Drawing.Size(356, 362);
+            this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Cari Ekle";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Appearance.BackColor = System.Drawing.Color.IndianRed;
-            this.btnDelete.Appearance.Options.UseBackColor = true;
-            this.btnDelete.Location = new System.Drawing.Point(110, 421);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(188, 32);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Sil";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Appearance.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnUpdate.Appearance.Options.UseBackColor = true;
-            this.btnUpdate.Location = new System.Drawing.Point(110, 373);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(188, 32);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Güncelle";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -149,16 +79,16 @@
             this.btnSave.Appearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseBorderColor = true;
-            this.btnSave.Location = new System.Drawing.Point(110, 324);
+            this.btnSave.Location = new System.Drawing.Point(114, 288);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(188, 33);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Kaydet";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(30, 282);
+            this.labelControl7.Location = new System.Drawing.Point(34, 246);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(59, 13);
             this.labelControl7.TabIndex = 13;
@@ -166,14 +96,14 @@
             // 
             // txtVergiDairesi
             // 
-            this.txtVergiDairesi.Location = new System.Drawing.Point(110, 279);
+            this.txtVergiDairesi.Location = new System.Drawing.Point(114, 243);
             this.txtVergiDairesi.Name = "txtVergiDairesi";
             this.txtVergiDairesi.Size = new System.Drawing.Size(188, 20);
-            this.txtVergiDairesi.TabIndex = 6;
+            this.txtVergiDairesi.TabIndex = 12;
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(30, 244);
+            this.labelControl6.Location = new System.Drawing.Point(34, 208);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(40, 13);
             this.labelControl6.TabIndex = 11;
@@ -181,14 +111,14 @@
             // 
             // txtVergiNo
             // 
-            this.txtVergiNo.Location = new System.Drawing.Point(110, 241);
+            this.txtVergiNo.Location = new System.Drawing.Point(114, 205);
             this.txtVergiNo.Name = "txtVergiNo";
             this.txtVergiNo.Size = new System.Drawing.Size(188, 20);
-            this.txtVergiNo.TabIndex = 5;
+            this.txtVergiNo.TabIndex = 10;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(30, 208);
+            this.labelControl5.Location = new System.Drawing.Point(34, 172);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(36, 13);
             this.labelControl5.TabIndex = 9;
@@ -196,14 +126,14 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(110, 205);
+            this.txtPhone.Location = new System.Drawing.Point(114, 169);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(188, 20);
-            this.txtPhone.TabIndex = 4;
+            this.txtPhone.TabIndex = 8;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(30, 172);
+            this.labelControl4.Location = new System.Drawing.Point(34, 136);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(24, 13);
             this.labelControl4.TabIndex = 7;
@@ -211,14 +141,14 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(110, 169);
+            this.txtEmail.Location = new System.Drawing.Point(114, 133);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(188, 20);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 6;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(30, 137);
+            this.labelControl3.Location = new System.Drawing.Point(34, 101);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(46, 13);
             this.labelControl3.TabIndex = 5;
@@ -226,14 +156,14 @@
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(110, 134);
+            this.txtFullName.Location = new System.Drawing.Point(114, 98);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(188, 20);
-            this.txtFullName.TabIndex = 1;
+            this.txtFullName.TabIndex = 4;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(30, 102);
+            this.labelControl2.Location = new System.Drawing.Point(34, 66);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(13, 13);
             this.labelControl2.TabIndex = 3;
@@ -241,34 +171,20 @@
             // 
             // txtTc
             // 
-            this.txtTc.Location = new System.Drawing.Point(110, 99);
+            this.txtTc.Location = new System.Drawing.Point(114, 63);
             this.txtTc.Name = "txtTc";
             this.txtTc.Size = new System.Drawing.Size(188, 20);
-            this.txtTc.TabIndex = 0;
+            this.txtTc.TabIndex = 2;
             // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(246, 45);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(52, 20);
-            this.txtId.TabIndex = 1;
-            // 
-            // CustomerList
+            // AddCutomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(1931, 561);
+            this.ClientSize = new System.Drawing.Size(451, 420);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.dgvCariList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "CustomerList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.CustomerList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCariList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.Name = "AddCutomerForm";
+            this.Text = "AddCutomerForm";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -278,20 +194,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFullName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl dgvCariList;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtVergiDairesi;
@@ -305,6 +214,5 @@
         private DevExpress.XtraEditors.TextEdit txtFullName;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtTc;
-        private DevExpress.XtraEditors.TextEdit txtId;
     }
 }

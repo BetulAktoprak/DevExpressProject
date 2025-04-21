@@ -42,7 +42,11 @@
     <Reference Include="DevExpress.Printing.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -70,11 +74,29 @@
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="FormCustomer\AddCutomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer\AddCutomerForm.Designer.cs">
+      <DependentUpon>AddCutomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomer\CustomerInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer\CustomerInformationForm.Designer.cs">
+      <DependentUpon>CustomerInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCustomer\CustomerList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCustomer\CustomerList.Designer.cs">
       <DependentUpon>CustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduct\ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduct\ProductList.Designer.cs">
+      <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
@@ -89,8 +111,14 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCustomer\AddCutomerForm.resx">
+      <DependentUpon>AddCutomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCustomer\CustomerList.resx">
       <DependentUpon>CustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduct\ProductList.resx">
+      <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
@@ -124,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FormOrder\" />
-    <Folder Include="FormProduct\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
