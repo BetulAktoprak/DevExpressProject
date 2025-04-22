@@ -14,25 +14,73 @@ namespace DevExpressProject.FormCustomer
 {
     public partial class AddCutomerForm : Form
     {
-        public AddCutomerForm()
+        private readonly int? _cariId;
+        public AddCutomerForm(int? cariId = null)
         {
             InitializeComponent();
+            _cariId = cariId;
+        }
+        private void AddCutomerForm_Load(object sender, EventArgs e)
+        {
+            if (_cariId.HasValue)
+            {
+                using (var context = new AppDbContext())
+                {
+                    var cari = context.Customers.FirstOrDefault(c => c.Id == _cariId.Value);
+                    if (cari != null)
+                    {
+                        txtTc.Text = cari.TCNo;
+                        txtFullName.Text = cari.FullName;
+                        txtEmail.Text = cari.Email;
+                        txtPhone.Text = cari.Phone;
+                        txtVergiNo.Text = cari.VergiNo;
+                        txtVergiDairesi.Text = cari.VergiDairesi;
+                    }
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             using (var context = new AppDbContext())
             {
-
-                var newCustomer = new Customer
+                if (_cariId.HasValue)
                 {
-                    FullName = txtFullName.Text,
-                    TCNo = txtTc.Text,
-                    Phone = txtPhone.Text,
-                    Email = txtEmail.Text,
-                    VergiNo = txtVergiNo.Text,
-                    VergiDairesi = txtVergiDairesi.Text
-                };
+                    var existingCustomer = context.Customers.FirstOrDefault(c => c.Id == _cariId.Value);
+                    if(existingCustomer != null)
+                    {
+                        existingCustomer.FullName = txtFullName.Text;
+                        existingCustomer.TCNo = txtTc.Text;
+                        existingCustomer.Phone = txtPhone.Text;
+                        existingCustomer.Email = txtEmail.Text;
+                        existingCustomer.VergiNo = txtVergiNo.Text;
+                        existingCustomer.VergiDairesi = txtVergiDairesi.Text;
+
+                        context.SaveChanges();
+                        MessageBox.Show("Müşteri Bilgileri Güncellendi.");
+                        CustomerClear();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    var newCustomer = new Customer
+                    {
+                        FullName = txtFullName.Text,
+                        TCNo = txtTc.Text,
+                        Phone = txtPhone.Text,
+                        Email = txtEmail.Text,
+                        VergiNo = txtVergiNo.Text,
+                        VergiDairesi = txtVergiDairesi.Text
+                    };
+
+                    context.Customers.Add(newCustomer);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Kullanıcı başarıyla kaydedildi!");
+                    CustomerClear();
+                }
+                    
 
                 //var validator = new CustomerValidator();
                 //var result = validator.Validate(newCustomer);
@@ -44,12 +92,9 @@ namespace DevExpressProject.FormCustomer
                 //    return;
                 //}
 
-                context.Customers.Add(newCustomer);
-                context.SaveChanges();
-
-                MessageBox.Show("Kullanıcı başarıyla kaydedildi!");
+               
                 //CustomerAdded?.Invoke(this, EventArgs.Empty);
-                CustomerClear();
+                
             }
         }
         private void CustomerClear()
@@ -61,5 +106,7 @@ namespace DevExpressProject.FormCustomer
             txtVergiNo.Clear();
             txtVergiDairesi.Clear();
         }
+
+       
     }
 }

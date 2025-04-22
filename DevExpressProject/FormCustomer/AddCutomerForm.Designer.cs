@@ -67,9 +67,10 @@
             this.groupControl1.Controls.Add(this.txtFullName);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtTc);
-            this.groupControl1.Location = new System.Drawing.Point(40, 29);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(356, 362);
+            this.groupControl1.Size = new System.Drawing.Size(451, 420);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Cari Ekle";
             // 
@@ -82,7 +83,7 @@
             this.btnSave.Location = new System.Drawing.Point(114, 288);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(188, 33);
-            this.btnSave.TabIndex = 14;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Kaydet";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -99,7 +100,7 @@
             this.txtVergiDairesi.Location = new System.Drawing.Point(114, 243);
             this.txtVergiDairesi.Name = "txtVergiDairesi";
             this.txtVergiDairesi.Size = new System.Drawing.Size(188, 20);
-            this.txtVergiDairesi.TabIndex = 12;
+            this.txtVergiDairesi.TabIndex = 5;
             // 
             // labelControl6
             // 
@@ -114,7 +115,7 @@
             this.txtVergiNo.Location = new System.Drawing.Point(114, 205);
             this.txtVergiNo.Name = "txtVergiNo";
             this.txtVergiNo.Size = new System.Drawing.Size(188, 20);
-            this.txtVergiNo.TabIndex = 10;
+            this.txtVergiNo.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -129,7 +130,7 @@
             this.txtPhone.Location = new System.Drawing.Point(114, 169);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(188, 20);
-            this.txtPhone.TabIndex = 8;
+            this.txtPhone.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -144,7 +145,7 @@
             this.txtEmail.Location = new System.Drawing.Point(114, 133);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(188, 20);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -159,7 +160,7 @@
             this.txtFullName.Location = new System.Drawing.Point(114, 98);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(188, 20);
-            this.txtFullName.TabIndex = 4;
+            this.txtFullName.TabIndex = 1;
             // 
             // labelControl2
             // 
@@ -174,17 +175,18 @@
             this.txtTc.Location = new System.Drawing.Point(114, 63);
             this.txtTc.Name = "txtTc";
             this.txtTc.Size = new System.Drawing.Size(188, 20);
-            this.txtTc.TabIndex = 2;
+            this.txtTc.TabIndex = 0;
             // 
             // AddCutomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Orange;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(451, 420);
             this.Controls.Add(this.groupControl1);
             this.Name = "AddCutomerForm";
             this.Text = "AddCutomerForm";
+            this.Load += new System.EventHandler(this.AddCutomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
