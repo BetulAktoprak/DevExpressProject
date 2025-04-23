@@ -46,8 +46,10 @@ namespace DevExpressProject.FormProduct
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             AddProductForm form = new AddProductForm();
-            form.ShowDialog();
-            LoadProductList();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                LoadProductList(); 
+            }
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -70,7 +72,7 @@ namespace DevExpressProject.FormProduct
         {
             if (e.KeyCode == Keys.Delete)
             {
-                DialogResult dialog = MessageBox.Show("Seçili müşteriyi silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialog = MessageBox.Show("Seçili ürünü silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialog == DialogResult.Yes)
                 {
                     int selectedId = Convert.ToInt32(gridView1.GetFocusedRowCellValue("Id"));
@@ -82,7 +84,7 @@ namespace DevExpressProject.FormProduct
                         {
                             context.Products.Remove(product);
                             context.SaveChanges();
-                            MessageBox.Show("Müşteri silindi.");
+                            MessageBox.Show("Ürün silindi.");
 
                             LoadProductList();
                         }

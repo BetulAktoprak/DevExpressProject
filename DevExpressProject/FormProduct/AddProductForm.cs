@@ -91,12 +91,14 @@ namespace DevExpressProject.FormProduct
 
                     context.SaveChanges();
 
-                    //ProductChanged?.Invoke(this, EventArgs.Empty);
+                    //ProductChanged.Invoke(this, EventArgs.Empty);
 
                     string message = _productId.HasValue ? "Ürün güncellendi!" : "Ürün eklendi!";
                     MessageBox.Show(message, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearForm();
 
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -116,6 +118,7 @@ namespace DevExpressProject.FormProduct
             lblBarcode.Text = string.Empty;
         }
 
+        
 
     }
 }

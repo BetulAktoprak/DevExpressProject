@@ -115,6 +115,8 @@
             // 
             this.gridView1.GridControl = this.dgvCariList;
             this.gridView1.Name = "gridView1";
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick_1);
             // 
             // CustomerList
             // 

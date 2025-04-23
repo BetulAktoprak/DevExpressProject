@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DevExpressProject.Entities
 {
@@ -14,6 +10,10 @@ namespace DevExpressProject.Entities
         public string Email { get; set; } = string.Empty;
         public string VergiNo { get; set; } = string.Empty;
         public string VergiDairesi { get; set; } = string.Empty;
+        public string Country { get; set; }
+        public string Province { get; set; }
+        public string District { get; set; }
+        public string Address { get; set; }
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

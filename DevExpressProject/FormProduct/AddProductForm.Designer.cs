@@ -119,8 +119,8 @@
             this.btnBarcode.Location = new System.Drawing.Point(18, 293);
             this.btnBarcode.Name = "btnBarcode";
             this.btnBarcode.Size = new System.Drawing.Size(93, 23);
-            this.btnBarcode.TabIndex = 16;
-            this.btnBarcode.Text = "6";
+            this.btnBarcode.TabIndex = 6;
+            this.btnBarcode.Text = "Barcode";
             this.btnBarcode.Click += new System.EventHandler(this.btnBarcode_Click);
             // 
             // lblBarcode

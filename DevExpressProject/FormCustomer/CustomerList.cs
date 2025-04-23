@@ -26,7 +26,7 @@ namespace DevExpressProject.FormCustomer
             using (var context = new AppDbContext())
             {
                 var result = context.Database.SqlQuery<Customer>(
-                    "SELECT Id, FullName, TCNo, Phone, Email, VergiNo, VergiDairesi, CreatedDate, UpdatedDate FROM Customers").ToList();
+                    "SELECT Id, FullName, TCNo, Phone, Email, Address, Country, Province, District, VergiNo, VergiDairesi, CreatedDate, UpdatedDate FROM Customers").ToList();
 
                 dgvCariList.DataSource = result;
                 gridView1.Columns["Orders"].Visible = false;
@@ -48,7 +48,23 @@ namespace DevExpressProject.FormCustomer
             LoadCustomer();
         }
 
-        private void dgvCariList_KeyDown_1(object sender, KeyEventArgs e)
+        private void btnYenile_Click(object sender, EventArgs e)
+        {
+            LoadCustomer();
+        }
+
+        private void gridView1_DoubleClick_1(object sender, EventArgs e)
+        {
+            var rowHandle = gridView1.FocusedRowHandle;
+            if (rowHandle >= 0)
+            {
+                int Id = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Id"));
+                var form = new AddCutomerForm(Id);
+                form.Show();
+            }
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
             {
@@ -73,20 +89,5 @@ namespace DevExpressProject.FormCustomer
             }
         }
 
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        {
-            var rowHandle = gridView1.FocusedRowHandle;
-            if(rowHandle >= 0)
-            {
-                int Id = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Id"));
-                var form = new AddCutomerForm(Id);
-                form.Show();
-            }
-        }
-
-        private void btnYenile_Click(object sender, EventArgs e)
-        {
-            LoadCustomer();
-        }
     }
 }

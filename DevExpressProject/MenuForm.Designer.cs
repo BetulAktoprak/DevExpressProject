@@ -37,10 +37,9 @@
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnProductList = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnSaveProduct = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnOrderList = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btnSaveOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -113,33 +112,25 @@
             this.btnSaveProduct.Text = "Ürün Ekle";
             this.btnSaveProduct.Click += new System.EventHandler(this.btnSaveProduct_Click);
             // 
-            // xtraTabbedMdiManager1
-            // 
-            this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
             // accordionControlElement2
             // 
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.btnOrderList,
-            this.btnSaveOrder});
+            this.btnOrderList});
             this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Siparişler";
             // 
             // btnOrderList
             // 
-            this.btnOrderList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
+            this.btnOrderList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOrderList.ImageOptions.Image")));
             this.btnOrderList.Name = "btnOrderList";
             this.btnOrderList.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnOrderList.Text = "Sipariş Listesi";
             this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
-            // btnSaveOrder
+            // xtraTabbedMdiManager1
             // 
-            this.btnSaveOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement5.ImageOptions.Image")));
-            this.btnSaveOrder.Name = "btnSaveOrder";
-            this.btnSaveOrder.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnSaveOrder.Text = "Sipariş Ekle";
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // MenuForm
             // 
@@ -168,6 +159,5 @@
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnOrderList;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btnSaveOrder;
     }
 }

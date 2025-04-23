@@ -127,6 +127,10 @@
     <Compile Include="Migrations\202504181222189_mig1.Designer.cs">
       <DependentUpon>202504181222189_mig1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504230830034_mig2.cs" />
+    <Compile Include="Migrations\202504230830034_mig2.Designer.cs">
+      <DependentUpon>202504230830034_mig2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504181222189_mig1.resx">
       <DependentUpon>202504181222189_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504230830034_mig2.resx">
+      <DependentUpon>202504230830034_mig2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

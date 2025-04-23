@@ -13,10 +13,12 @@ namespace DevExpressProject.FormOrder
     public partial class AddOrderForm : Form
     {
         private int? _id;
-        public AddOrderForm(int? id = null)
+        private string _fisNo;
+        public AddOrderForm(int? id = null, string fisNo = null)
         {
             InitializeComponent();
             _id = id;
+            _fisNo = fisNo;
         }
         private void AddOrderForm_Load(object sender, EventArgs e)
         {
@@ -25,6 +27,9 @@ namespace DevExpressProject.FormOrder
             gridView1.OptionsView.ShowGroupPanel = false;
             using (var context = new AppDbContext())
             {
+                lblFisNo.Text = "Fiş No : " + _fisNo;
+                ;
+
                 var customers = context.Customers
                     .Select(c => new { c.Id, c.FullName })
                     .ToList();

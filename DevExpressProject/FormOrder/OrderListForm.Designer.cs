@@ -58,6 +58,8 @@
             // 
             this.gridView1.GridControl = this.dgvOrderList;
             this.gridView1.Name = "gridView1";
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // panelTop
             // 
@@ -73,7 +75,7 @@
             // 
             // btnAddOrder
             // 
-            this.btnAddOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunEkle.ImageOptions.Image")));
+            this.btnAddOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddOrder.ImageOptions.Image")));
             this.btnAddOrder.Location = new System.Drawing.Point(12, 11);
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(132, 42);
@@ -97,6 +99,7 @@
             this.btnYenile.Name = "btnYenile";
             this.btnYenile.Size = new System.Drawing.Size(38, 42);
             this.btnYenile.TabIndex = 6;
+            this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
             // txtSearch
             // 

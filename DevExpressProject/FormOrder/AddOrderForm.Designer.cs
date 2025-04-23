@@ -30,34 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrderForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.dtpSevkTarihi = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.lblKdv = new DevExpress.XtraEditors.LabelControl();
+            this.spinQuantity = new DevExpress.XtraEditors.SpinEdit();
+            this.lookUpCustomer = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpProduct = new DevExpress.XtraEditors.LookUpEdit();
+            this.lblPrice = new DevExpress.XtraEditors.LabelControl();
+            this.btnPlus = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.lblKdv = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtpSevkTarihi = new DevExpress.XtraEditors.DateEdit();
             this.dgvPRoductList = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnPlus = new DevExpress.XtraEditors.SimpleButton();
-            this.lblPrice = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpProduct = new DevExpress.XtraEditors.LookUpEdit();
-            this.lookUpCustomer = new DevExpress.XtraEditors.LookUpEdit();
-            this.spinQuantity = new DevExpress.XtraEditors.SpinEdit();
+            this.lblFisNo = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpProduct.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpSevkTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpSevkTarihi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPRoductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpProduct.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpCustomer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lblFisNo);
             this.panelControl1.Controls.Add(this.spinQuantity);
             this.panelControl1.Controls.Add(this.lookUpCustomer);
             this.panelControl1.Controls.Add(this.lookUpProduct);
@@ -77,10 +79,118 @@
             this.panelControl1.Size = new System.Drawing.Size(732, 298);
             this.panelControl1.TabIndex = 0;
             // 
+            // spinQuantity
+            // 
+            this.spinQuantity.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinQuantity.Location = new System.Drawing.Point(127, 159);
+            this.spinQuantity.Name = "spinQuantity";
+            this.spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinQuantity.Size = new System.Drawing.Size(100, 20);
+            this.spinQuantity.TabIndex = 4;
+            // 
+            // lookUpCustomer
+            // 
+            this.lookUpCustomer.Location = new System.Drawing.Point(127, 83);
+            this.lookUpCustomer.Name = "lookUpCustomer";
+            this.lookUpCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpCustomer.Properties.NullText = "cari seçiniz";
+            this.lookUpCustomer.Size = new System.Drawing.Size(265, 20);
+            this.lookUpCustomer.TabIndex = 1;
+            // 
+            // lookUpProduct
+            // 
+            this.lookUpProduct.Location = new System.Drawing.Point(127, 46);
+            this.lookUpProduct.Name = "lookUpProduct";
+            this.lookUpProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpProduct.Properties.NullText = "ürün seçiniz";
+            this.lookUpProduct.Size = new System.Drawing.Size(265, 20);
+            this.lookUpProduct.TabIndex = 0;
+            this.lookUpProduct.EditValueChanged += new System.EventHandler(this.lookUpProduct_EditValueChanged);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.Location = new System.Drawing.Point(41, 245);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(0, 13);
+            this.lblPrice.TabIndex = 13;
+            // 
+            // btnPlus
+            // 
+            this.btnPlus.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlus.ImageOptions.Image")));
+            this.btnPlus.Location = new System.Drawing.Point(398, 41);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnPlus.Size = new System.Drawing.Size(34, 29);
+            this.btnPlus.TabIndex = 12;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
+            // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.Location = new System.Drawing.Point(277, 245);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(115, 36);
+            this.btnAddOrder.TabIndex = 5;
+            this.btnAddOrder.Text = "Kaydet";
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
+            // 
+            // lblKdv
+            // 
+            this.lblKdv.Location = new System.Drawing.Point(127, 202);
+            this.lblKdv.Name = "lblKdv";
+            this.lblKdv.Size = new System.Drawing.Size(0, 13);
+            this.lblKdv.TabIndex = 10;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(41, 162);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(33, 13);
+            this.labelControl5.TabIndex = 9;
+            this.labelControl5.Text = "Miktar:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(41, 123);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(56, 13);
+            this.labelControl4.TabIndex = 8;
+            this.labelControl4.Text = "Sevk Tarihi:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(41, 86);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(35, 13);
+            this.labelControl3.TabIndex = 7;
+            this.labelControl3.Text = "Cariler:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(41, 49);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(39, 13);
+            this.labelControl2.TabIndex = 6;
+            this.labelControl2.Text = "Ürünler:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(41, 202);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(23, 13);
+            this.labelControl1.TabIndex = 5;
+            this.labelControl1.Text = "KDV:";
+            // 
             // dtpSevkTarihi
             // 
             this.dtpSevkTarihi.EditValue = null;
-            this.dtpSevkTarihi.Location = new System.Drawing.Point(118, 109);
+            this.dtpSevkTarihi.Location = new System.Drawing.Point(127, 120);
             this.dtpSevkTarihi.Name = "dtpSevkTarihi";
             this.dtpSevkTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -88,62 +198,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpSevkTarihi.Size = new System.Drawing.Size(140, 20);
             this.dtpSevkTarihi.TabIndex = 2;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(32, 191);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(23, 13);
-            this.labelControl1.TabIndex = 5;
-            this.labelControl1.Text = "KDV:";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(32, 38);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(39, 13);
-            this.labelControl2.TabIndex = 6;
-            this.labelControl2.Text = "Ürünler:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(32, 75);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(35, 13);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "Cariler:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(32, 112);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(56, 13);
-            this.labelControl4.TabIndex = 8;
-            this.labelControl4.Text = "Sevk Tarihi:";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(32, 151);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(33, 13);
-            this.labelControl5.TabIndex = 9;
-            this.labelControl5.Text = "Miktar:";
-            // 
-            // lblKdv
-            // 
-            this.lblKdv.Location = new System.Drawing.Point(118, 191);
-            this.lblKdv.Name = "lblKdv";
-            this.lblKdv.Size = new System.Drawing.Size(0, 13);
-            this.lblKdv.TabIndex = 10;
-            // 
-            // btnAddOrder
-            // 
-            this.btnAddOrder.Location = new System.Drawing.Point(268, 234);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(115, 36);
-            this.btnAddOrder.TabIndex = 5;
-            this.btnAddOrder.Text = "Kaydet";
-            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // dgvPRoductList
             // 
@@ -162,57 +216,14 @@
             this.gridView1.GridControl = this.dgvPRoductList;
             this.gridView1.Name = "gridView1";
             // 
-            // btnPlus
+            // lblFisNo
             // 
-            this.btnPlus.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnPlus.Location = new System.Drawing.Point(389, 30);
-            this.btnPlus.Name = "btnPlus";
-            this.btnPlus.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnPlus.Size = new System.Drawing.Size(34, 29);
-            this.btnPlus.TabIndex = 12;
-            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.Location = new System.Drawing.Point(32, 234);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(0, 13);
-            this.lblPrice.TabIndex = 13;
-            // 
-            // lookUpProduct
-            // 
-            this.lookUpProduct.Location = new System.Drawing.Point(118, 35);
-            this.lookUpProduct.Name = "lookUpProduct";
-            this.lookUpProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpProduct.Properties.NullText = "ürün seçiniz";
-            this.lookUpProduct.Size = new System.Drawing.Size(265, 20);
-            this.lookUpProduct.TabIndex = 0;
-            this.lookUpProduct.EditValueChanged += new System.EventHandler(this.lookUpProduct_EditValueChanged);
-            // 
-            // lookUpCustomer
-            // 
-            this.lookUpCustomer.Location = new System.Drawing.Point(118, 72);
-            this.lookUpCustomer.Name = "lookUpCustomer";
-            this.lookUpCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpCustomer.Properties.NullText = "cari seçiniz";
-            this.lookUpCustomer.Size = new System.Drawing.Size(265, 20);
-            this.lookUpCustomer.TabIndex = 1;
-            // 
-            // spinQuantity
-            // 
-            this.spinQuantity.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinQuantity.Location = new System.Drawing.Point(118, 148);
-            this.spinQuantity.Name = "spinQuantity";
-            this.spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinQuantity.Size = new System.Drawing.Size(100, 20);
-            this.spinQuantity.TabIndex = 4;
+            this.lblFisNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFisNo.Location = new System.Drawing.Point(594, 25);
+            this.lblFisNo.Name = "lblFisNo";
+            this.lblFisNo.Size = new System.Drawing.Size(63, 13);
+            this.lblFisNo.TabIndex = 14;
+            this.lblFisNo.Text = "labelControl6";
             // 
             // AddOrderForm
             // 
@@ -228,13 +239,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpProduct.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpSevkTarihi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpSevkTarihi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPRoductList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpProduct.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpCustomer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +268,6 @@
         private DevExpress.XtraEditors.LookUpEdit lookUpCustomer;
         private DevExpress.XtraEditors.LookUpEdit lookUpProduct;
         private DevExpress.XtraEditors.SpinEdit spinQuantity;
+        private DevExpress.XtraEditors.LabelControl lblFisNo;
     }
 }
