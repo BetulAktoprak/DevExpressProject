@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrderForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lblFisNo = new DevExpress.XtraEditors.LabelControl();
             this.spinQuantity = new DevExpress.XtraEditors.SpinEdit();
             this.lookUpCustomer = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpProduct = new DevExpress.XtraEditors.LookUpEdit();
@@ -45,7 +46,6 @@
             this.dtpSevkTarihi = new DevExpress.XtraEditors.DateEdit();
             this.dgvPRoductList = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lblFisNo = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).BeginInit();
@@ -79,6 +79,15 @@
             this.panelControl1.Size = new System.Drawing.Size(732, 298);
             this.panelControl1.TabIndex = 0;
             // 
+            // lblFisNo
+            // 
+            this.lblFisNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFisNo.Location = new System.Drawing.Point(594, 25);
+            this.lblFisNo.Name = "lblFisNo";
+            this.lblFisNo.Size = new System.Drawing.Size(63, 13);
+            this.lblFisNo.TabIndex = 14;
+            this.lblFisNo.Text = "labelControl6";
+            // 
             // spinQuantity
             // 
             this.spinQuantity.EditValue = new decimal(new int[] {
@@ -91,7 +100,7 @@
             this.spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinQuantity.Size = new System.Drawing.Size(100, 20);
-            this.spinQuantity.TabIndex = 4;
+            this.spinQuantity.TabIndex = 3;
             // 
             // lookUpCustomer
             // 
@@ -133,10 +142,14 @@
             // 
             // btnAddOrder
             // 
+            this.btnAddOrder.Appearance.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnAddOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAddOrder.Appearance.Options.UseBackColor = true;
+            this.btnAddOrder.Appearance.Options.UseFont = true;
             this.btnAddOrder.Location = new System.Drawing.Point(277, 245);
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(115, 36);
-            this.btnAddOrder.TabIndex = 5;
+            this.btnAddOrder.TabIndex = 4;
             this.btnAddOrder.Text = "Kaydet";
             this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
@@ -215,15 +228,6 @@
             // 
             this.gridView1.GridControl = this.dgvPRoductList;
             this.gridView1.Name = "gridView1";
-            // 
-            // lblFisNo
-            // 
-            this.lblFisNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFisNo.Location = new System.Drawing.Point(594, 25);
-            this.lblFisNo.Name = "lblFisNo";
-            this.lblFisNo.Size = new System.Drawing.Size(63, 13);
-            this.lblFisNo.TabIndex = 14;
-            this.lblFisNo.Text = "labelControl6";
             // 
             // AddOrderForm
             // 

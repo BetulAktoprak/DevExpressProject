@@ -46,12 +46,31 @@
             // 
             // accordionControl1
             // 
+            this.accordionControl1.Appearance.AccordionControl.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.accordionControl1.Appearance.AccordionControl.BorderColor = System.Drawing.Color.OliveDrab;
+            this.accordionControl1.Appearance.AccordionControl.Font = new System.Drawing.Font("Tahoma", 9.25F, System.Drawing.FontStyle.Bold);
+            this.accordionControl1.Appearance.AccordionControl.ForeColor = System.Drawing.Color.White;
+            this.accordionControl1.Appearance.AccordionControl.Options.UseBackColor = true;
+            this.accordionControl1.Appearance.AccordionControl.Options.UseBorderColor = true;
+            this.accordionControl1.Appearance.AccordionControl.Options.UseFont = true;
+            this.accordionControl1.Appearance.AccordionControl.Options.UseForeColor = true;
+            this.accordionControl1.Appearance.Hint.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.accordionControl1.Appearance.Hint.Options.UseBackColor = true;
+            this.accordionControl1.Appearance.Item.Hovered.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.accordionControl1.Appearance.Item.Hovered.Options.UseBackColor = true;
+            this.accordionControl1.Appearance.Item.Normal.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.accordionControl1.Appearance.Item.Normal.Options.UseBackColor = true;
+            this.accordionControl1.Appearance.Item.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.accordionControl1.Appearance.Item.Pressed.Options.UseBackColor = true;
+            this.accordionControl1.Appearance.ItemWithContainer.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.accordionControl1.Appearance.ItemWithContainer.Normal.Options.UseBackColor = true;
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement1,
             this.accordionControlElement4,
             this.accordionControlElement2});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.Size = new System.Drawing.Size(260, 785);
             this.accordionControl1.TabIndex = 1;

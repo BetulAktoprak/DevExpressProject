@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpressProject.Context;
 using DevExpressProject.Entities;
+using DevExpressProject.Validations;
 
 namespace DevExpressProject.FormOrder
 {
@@ -28,8 +29,7 @@ namespace DevExpressProject.FormOrder
             using (var context = new AppDbContext())
             {
                 lblFisNo.Text = "Fiş No : " + _fisNo;
-                ;
-
+                
                 var customers = context.Customers
                     .Select(c => new { c.Id, c.FullName })
                     .ToList();
@@ -131,9 +131,11 @@ namespace DevExpressProject.FormOrder
                 context.SaveChanges();
 
                 XtraMessageBox.Show("Sipariş başarıyla kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //OrderChanged?.Invoke(this, EventArgs.Empty);
                 orderDetails.Clear();
                 RefreshGrid();
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
 
@@ -172,15 +174,15 @@ namespace DevExpressProject.FormOrder
                 TotalAmount = quantity * unitPrice
             };
 
-            //var validator = new OrderDetailValidator();
-            //var result = validator.Validate(detail);
+            var validator = new OrderDetailValidator();
+            var result = validator.Validate(detail);
 
-            //if (!result.IsValid)
-            //{
-            //    var errorMessage = string.Join("\n", result.Errors.Select(err => err.ErrorMessage));
-            //    MessageBox.Show(errorMessage, "Doğrulama Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (!result.IsValid)
+            {
+                var errorMessage = string.Join("\n", result.Errors.Select(err => err.ErrorMessage));
+                MessageBox.Show(errorMessage, "Doğrulama Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             orderDetails.Add(detail);
             RefreshGrid();

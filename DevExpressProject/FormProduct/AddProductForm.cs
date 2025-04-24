@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpressProject.Context;
 using DevExpressProject.Entities;
+using DevExpressProject.Validations;
 
 namespace DevExpressProject.FormProduct
 {
@@ -79,19 +75,18 @@ namespace DevExpressProject.FormProduct
                     product.Metre = double.TryParse(nmrMetre.Text, out var metre) ? metre : 0;
                     product.Kilo = double.TryParse(nmrKilo.Text, out var kilo) ? kilo : 0;
 
-                    //var validator = new ProductValidator();
-                    //var result = validator.Validate(product);
+                    var validator = new ProductValidator();
+                    var result = validator.Validate(product);
 
-                    //if (!result.IsValid)
-                    //{
-                    //    var errorMessage = string.Join("\n", result.Errors.Select(e => e.ErrorMessage));
-                    //    MessageBox.Show(errorMessage, "Doğrulama Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //    return;
-                    //}
+                    if (!result.IsValid)
+                    {
+                        var errorMessage = string.Join("\n", result.Errors.Select(err => err.ErrorMessage));
+                        MessageBox.Show(errorMessage, "Doğrulama Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     context.SaveChanges();
 
-                    //ProductChanged.Invoke(this, EventArgs.Empty);
 
                     string message = _productId.HasValue ? "Ürün güncellendi!" : "Ürün eklendi!";
                     MessageBox.Show(message, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -117,8 +112,6 @@ namespace DevExpressProject.FormProduct
             txtDescription.Clear();
             lblBarcode.Text = string.Empty;
         }
-
-        
 
     }
 }

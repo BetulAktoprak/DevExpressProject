@@ -2,9 +2,11 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using DevExpressProject.Context;
 using DevExpressProject.DTOs;
 using DevExpressProject.Entities;
+using DevExpressProject.Validations;
 
 namespace DevExpressProject.FormCustomer
 {
@@ -48,66 +50,54 @@ namespace DevExpressProject.FormCustomer
         {
             using (var context = new AppDbContext())
             {
+                Customer customer;
                 if (_cariId.HasValue)
                 {
-                    var existingCustomer = context.Customers.FirstOrDefault(c => c.Id == _cariId.Value);
-                    if(existingCustomer != null)
-                    {
-                        existingCustomer.FullName = txtFullName.Text;
-                        existingCustomer.TCNo = txtTc.Text;
-                        existingCustomer.Phone = txtPhone.Text;
-                        existingCustomer.Email = txtEmail.Text;
-                        existingCustomer.VergiNo = txtVergiNo.Text;
-                        existingCustomer.VergiDairesi = txtVergiDairesi.Text;
-                        existingCustomer.Address = txtAddress.Text;
-                        existingCustomer.Country = txtÜlke.Text;
-                        existingCustomer.Province = txtil.Text;
-                        existingCustomer.District = txtilçe.Text;
+                    customer = context.Customers.FirstOrDefault(c => c.Id == _cariId.Value);
 
-                        context.SaveChanges();
-                        MessageBox.Show("Müşteri Bilgileri Güncellendi.");
-                        CustomerClear();
-                        this.Close();
+                    if(customer is null)
+                    {
+                        XtraMessageBox.Show("Kullanıcı Bulunamadı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
                 }
                 else
                 {
-                    var newCustomer = new Customer
-                    {
-                        FullName = txtFullName.Text,
-                        TCNo = txtTc.Text,
-                        Phone = txtPhone.Text,
-                        Email = txtEmail.Text,
-                        VergiNo = txtVergiNo.Text,
-                        VergiDairesi = txtVergiDairesi.Text,
-                        Address = txtAddress.Text,
-                        Country = txtÜlke.Text,
-                        Province = txtil.Text,
-                        District = txtilçe.Text
-                    };
 
-                    context.Customers.Add(newCustomer);
-                    context.SaveChanges();
+                    customer = new Customer();
+                    context.Customers.Add(customer);
 
-                    MessageBox.Show("Kullanıcı başarıyla kaydedildi!");
-                    CustomerClear();
                 }
-                    
 
-                //var validator = new CustomerValidator();
-                //var result = validator.Validate(newCustomer);
+                    customer.FullName = txtFullName.Text;
+                    customer.TCNo = txtTc.Text;
+                    customer.Phone = txtPhone.Text;
+                    customer.Email = txtEmail.Text;
+                    customer.VergiNo = txtVergiNo.Text;
+                    customer.VergiDairesi = txtVergiDairesi.Text;
+                    customer.Address = txtAddress.Text;
+                    customer.Country = txtÜlke.Text;
+                    customer.Province = txtil.Text;
+                    customer.District = txtilçe.Text;
 
-                //if (!result.IsValid)
-                //{
-                //    var errorMessage = string.Join("\n", result.Errors.Select(e => e.ErrorMessage));
-                //    MessageBox.Show(errorMessage, "Doğrulama Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
+                var validator = new CustomerValidator();
+                var result = validator.Validate(customer);
 
-               
-                //CustomerAdded?.Invoke(this, EventArgs.Empty);
-                
-            }
+                if (!result.IsValid)
+                {
+                    var errorMessage = string.Join("\n", result.Errors.Select(err => err.ErrorMessage));
+                    MessageBox.Show(errorMessage, "Doğrulama Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                context.SaveChanges();
+                string message = _cariId.HasValue ? "Cari Bilgileri Güncellendi." : "Kullanıcı başarıyla kaydedildi!";
+                MessageBox.Show(message);
+                    CustomerClear();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+             }
         }
         private void CustomerClear()
         {

@@ -45,17 +45,17 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.txtAddress = new System.Windows.Forms.RichTextBox();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txtilçe = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtÜlke = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtil = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControlOrders = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtil = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.txtÜlke = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txtilçe = new DevExpress.XtraEditors.TextEdit();
-            this.txtAddress = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtTc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -67,12 +67,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtilçe.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtil.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtil.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtilçe.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTc
@@ -167,14 +167,20 @@
             // 
             // btnSave
             // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.btnSave.Appearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnSave.Appearance.BorderColor = System.Drawing.SystemColors.Info;
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.Transparent;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseBorderColor = true;
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Appearance.Options.UseForeColor = true;
+            this.btnSave.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSave.AppearanceHovered.Options.UseBackColor = true;
             this.btnSave.Location = new System.Drawing.Point(487, 236);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(143, 33);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Kaydet";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -230,6 +236,67 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(923, 351);
             this.xtraTabPage1.Text = "Cari Bilgisi";
             // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(128, 137);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(188, 77);
+            this.txtAddress.TabIndex = 6;
+            this.txtAddress.Text = "";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(362, 176);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(17, 13);
+            this.labelControl10.TabIndex = 21;
+            this.labelControl10.Text = "İlçe";
+            // 
+            // txtilçe
+            // 
+            this.txtilçe.Location = new System.Drawing.Point(442, 173);
+            this.txtilçe.Name = "txtilçe";
+            this.txtilçe.Size = new System.Drawing.Size(188, 20);
+            this.txtilçe.TabIndex = 9;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(48, 236);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(20, 13);
+            this.labelControl9.TabIndex = 19;
+            this.labelControl9.Text = "Ülke";
+            // 
+            // txtÜlke
+            // 
+            this.txtÜlke.Location = new System.Drawing.Point(128, 233);
+            this.txtÜlke.Name = "txtÜlke";
+            this.txtÜlke.Size = new System.Drawing.Size(188, 20);
+            this.txtÜlke.TabIndex = 7;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(362, 140);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(6, 13);
+            this.labelControl8.TabIndex = 17;
+            this.labelControl8.Text = "İl";
+            // 
+            // txtil
+            // 
+            this.txtil.Location = new System.Drawing.Point(442, 137);
+            this.txtil.Name = "txtil";
+            this.txtil.Size = new System.Drawing.Size(188, 20);
+            this.txtil.TabIndex = 8;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(48, 140);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(28, 13);
+            this.labelControl1.TabIndex = 15;
+            this.labelControl1.Text = "Adres";
+            // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.gridControlOrders);
@@ -255,67 +322,6 @@
             this.gridView1.GridControl = this.gridControlOrders;
             this.gridView1.Name = "gridView1";
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(48, 140);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 13);
-            this.labelControl1.TabIndex = 15;
-            this.labelControl1.Text = "Adres";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(362, 140);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(6, 13);
-            this.labelControl8.TabIndex = 17;
-            this.labelControl8.Text = "İl";
-            // 
-            // txtil
-            // 
-            this.txtil.Location = new System.Drawing.Point(442, 137);
-            this.txtil.Name = "txtil";
-            this.txtil.Size = new System.Drawing.Size(188, 20);
-            this.txtil.TabIndex = 16;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(48, 236);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(20, 13);
-            this.labelControl9.TabIndex = 19;
-            this.labelControl9.Text = "Ülke";
-            // 
-            // txtÜlke
-            // 
-            this.txtÜlke.Location = new System.Drawing.Point(128, 233);
-            this.txtÜlke.Name = "txtÜlke";
-            this.txtÜlke.Size = new System.Drawing.Size(188, 20);
-            this.txtÜlke.TabIndex = 18;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(362, 176);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(17, 13);
-            this.labelControl10.TabIndex = 21;
-            this.labelControl10.Text = "İlçe";
-            // 
-            // txtilçe
-            // 
-            this.txtilçe.Location = new System.Drawing.Point(442, 173);
-            this.txtilçe.Name = "txtilçe";
-            this.txtilçe.Size = new System.Drawing.Size(188, 20);
-            this.txtilçe.TabIndex = 20;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(128, 137);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(188, 77);
-            this.txtAddress.TabIndex = 22;
-            this.txtAddress.Text = "";
-            // 
             // AddCutomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,12 +344,12 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtilçe.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtil.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtil.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtilçe.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

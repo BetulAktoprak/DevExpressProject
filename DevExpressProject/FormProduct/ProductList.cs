@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpressProject.Context;
 using DevExpressProject.Entities;
-using DevExpressProject.FormCustomer;
 
 namespace DevExpressProject.FormProduct
 {
@@ -59,7 +52,12 @@ namespace DevExpressProject.FormProduct
             {
                 int Id = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Id"));
                 var form = new AddProductForm(Id);
-                form.Show();
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadProductList(); 
+                }
+
             }
         }
 

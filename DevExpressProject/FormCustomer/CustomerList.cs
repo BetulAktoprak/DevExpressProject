@@ -44,8 +44,11 @@ namespace DevExpressProject.FormCustomer
         private void btnCariEkle_Click(object sender, EventArgs e)
         {
             AddCutomerForm addCutomerForm = new AddCutomerForm();
-            addCutomerForm.ShowDialog();
-            LoadCustomer();
+            if(addCutomerForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadCustomer();
+            }
+            
         }
 
         private void btnYenile_Click(object sender, EventArgs e)
@@ -60,7 +63,10 @@ namespace DevExpressProject.FormCustomer
             {
                 int Id = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Id"));
                 var form = new AddCutomerForm(Id);
-                form.Show();
+                if(form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadCustomer();
+                }
             }
         }
 

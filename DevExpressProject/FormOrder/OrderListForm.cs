@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpressProject.Context;
 using DevExpressProject.DTOs;
-using DevExpressProject.Entities;
-using DevExpressProject.FormProduct;
 
 namespace DevExpressProject.FormOrder
 {
@@ -33,30 +26,35 @@ namespace DevExpressProject.FormOrder
         {
             using (var context = new AppDbContext())
             {
-                var result = context.Database.SqlQuery<OrderListDto>(
 
-                    @"SELECT o.Id, o.FisNo, 
-                             c.FullName AS Cari, 
-                             STUFF((
-                                 SELECT DISTINCT ', ' + p2.ProductName
-                                 FROM OrderDetails od2
-                                 JOIN Products p2 ON od2.ProductId = p2.Id
-                                 WHERE od2.OrderId = o.Id
-                                 FOR XML PATH(''), TYPE).value('.', 'NVARCHAR(MAX)'), 1, 2, '') AS Products,
-                             COUNT(DISTINCT p.Id) AS UrunSayisi, 
-                             SUM(od.Quantity) AS TotalQuantity,
-                             o.ShipmentDate AS SevkiyatTarihi, 
-                             o.CreatedDate, 
-                             o.UpdatedDate, 
-                             SUM(od.Quantity * od.UnitPrice) AS ToplamTutar 
-                      FROM Orders o 
-                      JOIN Customers c ON o.CustomerId = c.Id 
-                      JOIN OrderDetails od ON od.OrderId = o.Id 
-                      JOIN Products p ON od.ProductId = p.Id 
-                      GROUP BY o.Id, c.FullName, o.FisNo, o.ShipmentDate, o.CreatedDate, o.UpdatedDate").ToList();
+                var orders = context.Orders.Select(o => new
+                {
+                    o.Id,
+                    o.FisNo,
+                    Cari = o.Customer.FullName,
+                    o.ShipmentDate,
+                    o.CreatedDate,
+                    ProductNames = o.OrderDetails.Select(od => od.Product.ProductName),
+                    UrunSayisi = o.OrderDetails.Select(od => od.ProductId).Distinct().Count(),
+                    TotalQuantity = o.OrderDetails.Sum(od => od.Quantity),
+                    ToplamTutar = o.OrderDetails.Sum(od => od.Quantity * od.UnitPrice)
+                }).ToList();
+
+                var result = orders.Select(o => new OrderListDto
+                {
+                    Id = o.Id,
+                    FisNo = o.FisNo,
+                    Cari = o.Cari,
+                    SevkiyatTarihi = o.ShipmentDate ?? DateTime.MinValue,
+                    CreatedDate = o.CreatedDate,
+                    Ürünler = string.Join(", ", o.ProductNames.Distinct()),
+                    UrunSayisi = o.UrunSayisi,
+                    TotalQuantity = o.TotalQuantity,
+                    ToplamTutar = o.ToplamTutar
+                }).ToList();
+
 
                 dgvOrderList.DataSource = result;
-                //gridView1.Columns["Orders"].Visible = false;
                 gridView1.Columns["Id"].Visible = true;
                 gridView1.Columns["Id"].VisibleIndex = 0;
 
@@ -71,7 +69,10 @@ namespace DevExpressProject.FormOrder
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             AddOrderForm addOrderForm = new AddOrderForm();
-            addOrderForm.ShowDialog();
+            if(addOrderForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrder();
+            }
         }
 
         private void btnYenile_Click(object sender, EventArgs e)
@@ -87,7 +88,10 @@ namespace DevExpressProject.FormOrder
                 int Id = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Id"));
                 string fisNo = gridView1.GetRowCellValue(rowHandle, "FisNo").ToString();
                 var form = new AddOrderForm(Id, fisNo);
-                form.Show();
+                if(form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadOrder();
+                }
             }
         }
 

@@ -80,6 +80,11 @@
             // nmrKilo
             // 
             this.nmrKilo.Location = new System.Drawing.Point(114, 255);
+            this.nmrKilo.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nmrKilo.Name = "nmrKilo";
             this.nmrKilo.Size = new System.Drawing.Size(188, 21);
             this.nmrKilo.TabIndex = 5;
@@ -87,6 +92,11 @@
             // nmrMetre
             // 
             this.nmrMetre.Location = new System.Drawing.Point(114, 226);
+            this.nmrMetre.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nmrMetre.Name = "nmrMetre";
             this.nmrMetre.Size = new System.Drawing.Size(188, 21);
             this.nmrMetre.TabIndex = 4;
@@ -94,6 +104,11 @@
             // nmrUnitPrice
             // 
             this.nmrUnitPrice.Location = new System.Drawing.Point(114, 190);
+            this.nmrUnitPrice.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.nmrUnitPrice.Name = "nmrUnitPrice";
             this.nmrUnitPrice.Size = new System.Drawing.Size(188, 21);
             this.nmrUnitPrice.TabIndex = 3;
@@ -101,6 +116,11 @@
             // nmrStock
             // 
             this.nmrStock.Location = new System.Drawing.Point(114, 160);
+            this.nmrStock.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.nmrStock.Name = "nmrStock";
             this.nmrStock.Size = new System.Drawing.Size(188, 21);
             this.nmrStock.TabIndex = 2;
@@ -132,10 +152,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.btnSave.Appearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnSave.Appearance.BorderColor = System.Drawing.SystemColors.Info;
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseBorderColor = true;
+            this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Location = new System.Drawing.Point(114, 343);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(188, 33);
