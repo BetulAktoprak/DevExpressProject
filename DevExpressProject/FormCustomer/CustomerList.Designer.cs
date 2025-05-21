@@ -54,7 +54,7 @@
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(1058, 31);
+            this.txtSearch.Location = new System.Drawing.Point(517, 31);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(193, 20);
             this.txtSearch.TabIndex = 4;
@@ -82,7 +82,7 @@
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(1006, 34);
+            this.labelControl2.Location = new System.Drawing.Point(465, 34);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(35, 13);
             this.labelControl2.TabIndex = 7;
@@ -97,7 +97,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1263, 58);
+            this.panelTop.Size = new System.Drawing.Size(722, 58);
             this.panelTop.TabIndex = 8;
             // 
             // dgvCariList
@@ -106,7 +106,7 @@
             this.dgvCariList.Location = new System.Drawing.Point(0, 58);
             this.dgvCariList.MainView = this.gridView1;
             this.dgvCariList.Name = "dgvCariList";
-            this.dgvCariList.Size = new System.Drawing.Size(1263, 503);
+            this.dgvCariList.Size = new System.Drawing.Size(722, 510);
             this.dgvCariList.TabIndex = 9;
             this.dgvCariList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -115,6 +115,8 @@
             // 
             this.gridView1.GridControl = this.dgvCariList;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick_1);
             // 
@@ -123,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(1263, 561);
+            this.ClientSize = new System.Drawing.Size(722, 568);
             this.Controls.Add(this.dgvCariList);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.labelControl1);

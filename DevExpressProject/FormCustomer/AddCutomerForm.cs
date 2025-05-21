@@ -55,7 +55,7 @@ namespace DevExpressProject.FormCustomer
                 {
                     customer = context.Customers.FirstOrDefault(c => c.Id == _cariId.Value);
 
-                    if(customer is null)
+                    if (customer is null)
                     {
                         XtraMessageBox.Show("Kullanıcı Bulunamadı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -69,16 +69,16 @@ namespace DevExpressProject.FormCustomer
 
                 }
 
-                    customer.FullName = txtFullName.Text;
-                    customer.TCNo = txtTc.Text;
-                    customer.Phone = txtPhone.Text;
-                    customer.Email = txtEmail.Text;
-                    customer.VergiNo = txtVergiNo.Text;
-                    customer.VergiDairesi = txtVergiDairesi.Text;
-                    customer.Address = txtAddress.Text;
-                    customer.Country = txtÜlke.Text;
-                    customer.Province = txtil.Text;
-                    customer.District = txtilçe.Text;
+                customer.FullName = txtFullName.Text;
+                customer.TCNo = txtTc.Text;
+                customer.Phone = txtPhone.Text;
+                customer.Email = txtEmail.Text;
+                customer.VergiNo = txtVergiNo.Text;
+                customer.VergiDairesi = txtVergiDairesi.Text;
+                customer.Address = txtAddress.Text;
+                customer.Country = txtÜlke.Text;
+                customer.Province = txtil.Text;
+                customer.District = txtilçe.Text;
 
                 var validator = new CustomerValidator();
                 var result = validator.Validate(customer);
@@ -93,11 +93,11 @@ namespace DevExpressProject.FormCustomer
                 context.SaveChanges();
                 string message = _cariId.HasValue ? "Cari Bilgileri Güncellendi." : "Kullanıcı başarıyla kaydedildi!";
                 MessageBox.Show(message);
-                    CustomerClear();
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                CustomerClear();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
 
-             }
+            }
         }
         private void CustomerClear()
         {
